@@ -19,16 +19,19 @@ export default function Navbar() {
 
   const navItems = [
     { name: "Home", href: "/" },
+    { name: "Lens", href: "https://spotter.ai/lens" },
+    { name: "TMS", href: "https://spotter.ai/tms" },
+    { name: "Sentinel", href: "https://spotter.ai/sentinel" },
+    { name: "Extension", href: "https://extension.spotter.ai/" },
+    { name: "Spotter App", href: "https://spotter.ai/driversapp" },
     {
-      name: "Solutions",
-      dropdown: [
-        { name: "Trucking Automation", href: "/solutions/trucking" },
-        { name: "AI Recruiting Engine", href: "/solutions/recruiting" },
-      ],
+      name: "Loan Calculators",
+      href: "https://spotter.ai/loan-calculators",
     },
-    { name: "Pricing", href: "/pricing" },
-    { name: "About", href: "/about" },
-    { name: "Contact", href: "/contact" },
+    {
+      name: "More",
+      dropdown: [{ name: "Insights", href: "https://spotter.ai/insights" }],
+    },
   ];
 
   return (
@@ -58,7 +61,12 @@ export default function Navbar() {
                       <ul className="dropdown-menu">
                         {item.dropdown.map((drop, j) => (
                           <li key={j}>
-                            <Link href={drop.href} className="dropdown-link">
+                            <Link
+                              href={drop.href}
+                              className="dropdown-link"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
                               {drop.name}
                             </Link>
                           </li>
@@ -68,7 +76,12 @@ export default function Navbar() {
                   </li>
                 ) : (
                   <li key={i} className="nav-item">
-                    <Link href={item.href} className="nav-link">
+                    <Link
+                      href={item.href}
+                      className="nav-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       {item.name}
                     </Link>
                   </li>
